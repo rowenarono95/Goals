@@ -6,12 +6,13 @@ import { Goal } from '../goal';
   templateUrl: './goal-form.component.html',
   styleUrls: ['./goal-form.component.css']
 })
-exportclass GoalFormComponent implements OnInit {
+export class GoalFormComponent implements OnInit {
 
-  newGoal = new Goal(0, "", "", newDate());
+  newGoal = new Goal(0, "", "", new Date());
+
   @Output() addGoal = new EventEmitter<Goal>();
 
-  submitGoal(){
+  submitGoal() {
     this.addGoal.emit(this.newGoal);
   }
   constructor() { }
